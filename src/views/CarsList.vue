@@ -1,11 +1,9 @@
 
 <script>
 import SingleCar from '../components/SingleCar.vue';
-import SingleCar from '../components/SingleCar.vue';
-import SingleCar from '../components/SingleCar.vue';
 import axios from 'axios';
 
-  export default{
+export default {
     name: "CarsList",
     data() {
         return {
@@ -15,7 +13,7 @@ import axios from 'axios';
     },
     methods: {
         async getCars() {
-            await axios.get(`${UrlBase}/api/cars`).then(response => {
+            await axios.get(`${this.UrlBase}/api/cars`).then(response => {
                 this.carsList = response.data.results.data;
             });
         }
@@ -29,11 +27,17 @@ import axios from 'axios';
 
 
 <template>
-  <div v-for="car in carsList">
-  <SingleCar :SingleCar="car"/>
-  </div>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-10 mx-auto">
+              <div class="row">
+                <div v-for="car in carsList" class="col mb-3 text-center">
+                    <SingleCar :car="car" />
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
 </template>
 
-<style>
-
-</style>
+<style></style>

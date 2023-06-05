@@ -1,20 +1,20 @@
 <script>
-    export default{
-        name: 'SingleCar',
-        props:{
-            SingleCar: Object
-        }
-    
-    }
-    
+export default {
+  name: 'SingleCar',
+  props: {
+    car: Object
+  }
+
+}
+
 </script>
 
 <template>
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{ SingleCar.brand }}</h5>
-    <p class="card-text">{{ SingleCar.model }}</p>
-    <a href="#" class="btn btn-primary">{{ SingleCar.price }}</a>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ car.brand }}</h5>
+      <p class="card-text text-uppercase">{{ car.model }}</p>
+      <span class="badge text-bg-secondary">€ {{ car.price }}</span>
+    </div>
   </div>
-</div>
 </template>
